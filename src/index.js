@@ -4,6 +4,8 @@ const cors = require('cors');
 
 require('dotenv').config();
 
+const {init} = require('./microcontroller/con_index')
+
 const middlewares = require('./middlewares');
 const lamp = require('./routes/lamp')
 
@@ -25,3 +27,5 @@ const port = process.env.PORT
 app.listen(port, () =>{
     console.log('Listening at port ' + port)
 })
+
+init();
