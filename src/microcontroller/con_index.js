@@ -17,7 +17,7 @@ function init(){
       });
 }
 
-async function switchlamp(ID){
+function switchlamp(ID){
     console.log("Lamp switched with ID:" + ID);
     let bits = binaryarray(ID)
     board.digitalWrite(12, 1)
