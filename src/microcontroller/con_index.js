@@ -6,6 +6,9 @@ const board = new Board({
     baudrate:"9600"
 });
 
+const sleep = ms => new Promise(r => setTimeout(r, ms));
+
+
 // The board's pins will not be accessible until
 // the board has reported that it is ready
 function init(){
