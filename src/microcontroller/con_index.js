@@ -14,14 +14,16 @@ function init(){
       });
 }
 
+let lamp_state=false;
+
 function switchlamp(ID){
-    console.log("Lamp switched with ID:" + ID);
-    let bits = binaryarray(ID)
-    board.digitalWrite(12, 1)
-    for(i = 0; i>8; i++){
-        board.digitalWrite(12, Number(bits[i]))
-    }
-    board.digitalWrite(12, 1)
+    lamp_state ? board.digitalWrite(6, 1): board.digitalWrite(6, 0);
 }
 
-module.exports = {init, switchlamp};
+let blind_state=false
+
+function switchBlind(Percent){
+    blind_state ? board.digitalWrite(6, 1): board.digitalWrite(6, 0);
+}
+
+module.exports = {init, switchlamp,switchBlind};
