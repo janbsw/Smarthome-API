@@ -18,7 +18,7 @@ app.use(cors({
 }))
 
 app.use('/api/lamp', lamp)
-app.use('api/blind', blind)
+app.use('/api/blind', blind)
 
 app.use(middlewares.notFound)
 
