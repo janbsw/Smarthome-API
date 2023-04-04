@@ -27,10 +27,12 @@ function switchlamp(ID){
     }
 }
 
-let blind_state=false
-
 function switchBlind(ID){
-    blind_state ? board.digitalWrite(7, 1): board.digitalWrite(7, 0);
+    if(ID == 1){
+        board.digitalWrite(7, 1);
+    }else{
+        board.digitalWrite(7, 0);
+    }
 }
 
 module.exports = {init, switchlamp,switchBlind};
