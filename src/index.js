@@ -8,6 +8,7 @@ const {init} = require('./microcontroller/con_index')
 
 const middlewares = require('./middlewares');
 const lamp = require('./routes/lamp')
+const blind = require('./routes/blind')
 
 
 const app = express();
@@ -17,6 +18,7 @@ app.use(cors({
 }))
 
 app.use('/api/lamp', lamp)
+app.use('api/blind', blind)
 
 app.use(middlewares.notFound)
 

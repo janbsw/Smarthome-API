@@ -17,16 +17,20 @@ function init(){
       });
 }
 
-let lamp_state=false;
+
 
 function switchlamp(ID){
-    lamp_state ? board.digitalWrite(6, 1): board.digitalWrite(6, 0);
+    if(ID == 1){
+        board.digitalWrite(6, 1);
+    }else{
+        board.digitalWrite(6, 0);
+    }
 }
 
 let blind_state=false
 
-function switchBlind(Percent){
-    blind_state ? board.digitalWrite(6, 1): board.digitalWrite(6, 0);
+function switchBlind(ID){
+    blind_state ? board.digitalWrite(7, 1): board.digitalWrite(7, 0);
 }
 
 module.exports = {init, switchlamp,switchBlind};

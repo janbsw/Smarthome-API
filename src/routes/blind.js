@@ -5,8 +5,8 @@ const { switchblind, init } = require('../microcontroller/con_index')
 const router = Router();
 
 router.get('/id/:blindid', (req, res) =>{
-   var lampId = req.params.lampId
-   switchlamp(req.params.lampId)
+   var lampId = req.params.blindid
+   switchblind(req.params.blindid)
    res.send(lampId)
 })
 
